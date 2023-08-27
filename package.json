@@ -1,0 +1,31 @@
+{
+  "name": "cms-style-tech_blog",
+  "version": "1.0.0",
+  "description": "A tech blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "lint": "npx eslint **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakeRedundant/CMS-Style-Tech_Blog.git"
+  },
+  "author": "Brian Trang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MakeRedundant/CMS-Style-Tech_Blog/issues"
+  },
+  "homepage": "https://github.com/MakeRedundant/CMS-Style-Tech_Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.18.2",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1"
+  }
+}
