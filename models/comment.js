@@ -18,7 +18,6 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        // Comments must be at least one character long
         len: [1],
       },
     },
