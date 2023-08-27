@@ -34,3 +34,10 @@
     "radix": "off"
   }
 }
+
+
+//so quick summary for eslint 
+ //npm install eslint 
+ //npm init @eslint/config answer some questions 
+ //npx  eslint file.js
+ //npx eslint file.js --fix (to fix the thing)
