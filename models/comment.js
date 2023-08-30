@@ -1,3 +1,6 @@
+//Comment Model
+
+//Sequelize model, datatypes (objects), and db connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
@@ -8,6 +11,7 @@ class Comment extends Model {}
 // Defines the comment
 Comment.init(
   {
+    // comment attributes
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -18,17 +22,19 @@ Comment.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [1], //1 char minimum
       },
     },
     user_id: {
+      // an integer that references the id column of the user table (establishes a relationship between comments and users)
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: 'user', // References the User model
+        key: 'id', // Using the id column of the User model
       },
     },
     post_id: {
+      // referneces the id column of the post table. Establishes a relationship between comments and posts
       type: DataTypes.INTEGER,
       references: {
         model: 'post',
@@ -37,9 +43,13 @@ Comment.init(
     },
   },
   {
+    // Sequelize instance for database connection
     sequelize,
+    // Prevent Sequelize from altering the table name
     freezeTableName: true,
+    // Convert camelCase attribute names to snake_case column names
     underscored: true,
+    // Set the model name for various operations
     modelName: 'comment',
   }
 );
