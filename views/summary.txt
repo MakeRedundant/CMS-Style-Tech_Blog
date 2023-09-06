@@ -1,0 +1,14 @@
+Summary
+
+The views folder  typically serves as the location for storing templates that are used to generate HTML pages dynamically.
+These templates are a fundamental part of web application 
+
+Layouts
+This folder typically contains layout templates.
+Layout templates define the overall structure of a web page,
+including common elements like headers, footers, navigation menus, 
+and placeholders for dynamic content. Layouts are used to ensure a consistent look and feel across multiple pages of your website.
+
+Partials
+Partials are smaller, reusable templates that can be included within other templates. 
+They are often used for components or sections of a page that appear on multiple pages.

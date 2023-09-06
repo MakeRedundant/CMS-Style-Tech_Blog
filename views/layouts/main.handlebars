@@ -2,10 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMS-Style Tech Blog</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- ... (head section) ... -->
 </head>
 
 <body>
@@ -16,15 +13,19 @@
             </h1>
             <nav>
                 <span><a href="/">home</a></span>
+                <!-- Conditional Block: Renders different content based on the "loggedIn" variable -->
                 {{#if loggedIn}}
+                <!-- If the user is logged in -->
                 <a href="/dashboard">dashboard</a>
                 <button id="logout" class="btn-no-style">logout</button>
                 {{else}}
+                <!-- If the user is not logged in -->
                 <a href="/login">login</a>
                 {{/if}}
             </nav>
         </header>
         <main>
+            <!-- Dynamic Content: Inserts the main content of the page provided by Express.js -->
             {{{ body }}}
         </main>
         <footer>
@@ -32,10 +33,10 @@
         </footer>
     </div>
 
+    <!-- Conditional JavaScript: Includes the login.js script only if the user is logged in -->
     {{#if loggedIn}}
-    <script src="/public/js/login.js"></script>
+    <script src="/CMS-Style-Tech_Blog/public/javascript/login.js"></script>
     {{/if}}
-
 </body>
 
 </html>
