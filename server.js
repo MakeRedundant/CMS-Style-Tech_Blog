@@ -8,11 +8,11 @@ const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 ////////////// Handlebars \\\\\\\\\\\\\
-// Handlebars helpers
-const helpers = require("./utils/helpers");
+// // Handlebars helpers
+// const helpers = require("./utils/helpers");
 
-// Initialize handlebars for the html templates
-const hbs = exphbs.create({ helpers });
+// // Initialize handlebars for the html templates
+// const hbs = exphbs.create({ helpers });
 
 const app = express();
 const PORT = process.env.PORT || 3001;
