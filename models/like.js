@@ -1,7 +1,7 @@
 // Like Model
 
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 // Define the Like class that extends the Sequelize Model class
 class Like extends Model {}
@@ -20,8 +20,8 @@ Like.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user", // References the User model
-        key: "id", // Using the id column of the User model
+        model: 'user', // References the User model
+        key: 'id', // Using the id column of the User model
       },
       // Foreign key to associate the like with the user who liked the post
     },
@@ -29,8 +29,8 @@ Like.init(
     post_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "post", // References the Post model
-        key: "id", // Using the id column of the Post model
+        model: 'post', // References the Post model
+        key: 'id', // Using the id column of the Post model
       },
       // Foreign key to associate the like with the post being liked
     },
@@ -42,7 +42,7 @@ Like.init(
 
     freezeTableName: true, // Prevent Sequelize from altering the table name
     underscored: true, // Convert camelCase attribute names to snake_case column names
-    modelName: "like", // Set the model name for various operations
+    modelName: 'like', // Set the model name for various operations
   }
 );
 
