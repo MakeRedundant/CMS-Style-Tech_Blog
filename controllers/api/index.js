@@ -1,25 +1,25 @@
 // Dependencies \\
 
 // Server connection
-const router = require("express").Router();
+const router = require('express').Router();
 // API routes folder
-const apiRoutes = require("./api");
+const apiRoutes = require('./api');
 // Homepage routes
-const homeRoutes = require("./homeRoutes");
+const homeRoutes = require('./homeRoutes');
 // Dashboard Routes
-const dashboardRoutes = require("./dashboardRoutes");
+const dashboardRoutes = require('./dashboardRoutes');
 
 // Defines paths for different types of routes
 /// An API route/API endpoint is a specific URL that represents a unique resource or functionality within a web application's API
 
 // API Routes: Routes that start with "/api" and are defined in the "apiRoutes" module
-router.use("/api", apiRoutes);
+router.use('/api', apiRoutes);
 
 // Home Page Routes: Routes for rendering and handling requests on the home page
-router.use("/", homeRoutes);
+router.use('/', homeRoutes);
 
 // Dashboard Routes: Routes for rendering and handling requests on the dashboard
-router.use("/dashboard", dashboardRoutes);
+router.use('/dashboard', dashboardRoutes);
 
 // Catch-All Route: Handles requests for resources that don't match any defined route
 router.use((req, res) => {
