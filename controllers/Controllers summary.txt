@@ -1,0 +1,13 @@
+// Summary
+// Using a Model-View-Controller (MVC) architecture, the controllers folder is responsible for containing the logic 
+// that handles incoming requests from clients,
+// interacts with models (to retrieve or manipulate data), and sends responses back to the clients.
+
+
+
+//API Controllers:
+
+api folder: This subfolder is dedicated to controllers that handle API routes. 
+API controllers are responsible for processing requests and sending JSON or XML responses back to clients 
+(typically other applications or frontend frameworks).
+

@@ -1,0 +1,18 @@
+Models
+
+The Models folder contains the components responsible for handling data and business logic.
+ These components are referred to as "models." Models represent the underlying data structure and encapsulate 
+ the logic required to interact with and manipulate that data.
+
+Database Abstraction: In web applications, models often abstract the database schema. 
+They define the structure of database tables or collections and provide an interface to perform CRUD
+ (Create, Read, Update, Delete) operations on the data stored in the database.
+
+Data Validation: Models are responsible for data validation
+
+Interactions with Controllers and Views: Models act as intermediaries between the Controller and the data. 
+When a user interacts with the application (through the View)
+
+Separation of Concerns: The use of models in the MVC pattern promotes the separation of concerns.
+
+Reusability: Models can often be reused in different parts of the application. 
