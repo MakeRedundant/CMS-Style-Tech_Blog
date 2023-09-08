@@ -11,3 +11,4 @@ api folder: This subfolder is dedicated to controllers that handle API routes.
 API controllers are responsible for processing requests and sending JSON or XML responses back to clients 
 (typically other applications or frontend frameworks).
 
+//../../models means: Go up two levels, then enter the models directory.

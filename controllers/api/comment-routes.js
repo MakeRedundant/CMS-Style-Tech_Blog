@@ -1,7 +1,7 @@
 // Import Dependencies
 const router = require('express').Router();
 const { Comment } = require('../../models'); //   Import the Comment model
-const withAuth = require('../../utils/auth'); // Import an authentication utility (not used in this route)
+const withAuth = require('../../utils/auth'); // Import an authentication utility
 
 //../../models means: Go up two levels, then enter the models directory.
 
@@ -24,6 +24,10 @@ router.get('/', (req, res) => {
 
 // Define a POST Route for Posting Comments
 router.post('/', withAuth, (req, res) => {
+  //withAuth is middleware
+  //(req, res) => this is the route handler function, It's a callback function that gets executed when an HTTP POST request
+  // req object represents the incoming request
+  // res object represents the response that will be sent to the cilent
   // Check the session to ensure user authentication
   if (req.session) {
     // Create a new comment in the database
@@ -44,22 +48,27 @@ router.post('/', withAuth, (req, res) => {
   }
 });
 
+//Defines a delete Route for Comments
 router.delete('/:id', withAuth, (req, res) => {
+  // Use the Comment model to delete a comment with the specified ID
   Comment.destroy({
     where: {
-      id: req.params.id,
+      id: req.params.id, // Find the comment by its ID from the request parameters
     },
   })
     .then((CommentData) => {
       if (!CommentData) {
+        // If no comment was found with the specified ID, send a 404 Not Found response
         res
           .status(404)
           .json({ message: 'Unsuccessful, No comment found with this id' });
         return;
       }
+      // If the comment was successfully deleted, send a JSON response with the deleted data
       res.json(CommentData);
     })
     .catch((err) => {
+      // If there's an error during the deletion process, log the error and send a 500 Internal Server Error response
       console.log(err);
       res.status(500).json(err);
     });
