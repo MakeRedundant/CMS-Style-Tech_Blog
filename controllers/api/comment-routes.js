@@ -9,7 +9,10 @@ const withAuth = require('../../utils/auth'); // Import an authentication utilit
 
 // Define a GET Route for Retrieving Comments
 router.get('/', (req, res) => {
-  // Retrieve all comments from the database
+  console.log('Get comments');
+  //defines a HTTP GET route using express Router module, "/" is the route path
+  //(req, res) is the route handler function
+  /// Retrieves all comments from the database
   Comment.findAll({})
     .then((CommentData) => {
       // If successful, send the comment data as a JSON response
@@ -42,7 +45,7 @@ router.post('/', withAuth, (req, res) => {
       })
       .catch((err) => {
         // If there's an error during comment creation, log the error and send a 400 Bad Request response
-        console.log(err + ' Unsuccessful, there was an error');
+        console.log(err);
         res.status(400).json(err);
       });
   }
@@ -52,11 +55,13 @@ router.post('/', withAuth, (req, res) => {
 router.delete('/:id', withAuth, (req, res) => {
   // Use the Comment model to delete a comment with the specified ID
   Comment.destroy({
+    //Sequelize method for deleting based on the conditions in the where object
     where: {
       id: req.params.id, // Find the comment by its ID from the request parameters
     },
   })
     .then((CommentData) => {
+      //promise chain when the comment.destroy operation is successful it returns a promise that resolves with commentData
       if (!CommentData) {
         // If no comment was found with the specified ID, send a 404 Not Found response
         res
@@ -68,6 +73,7 @@ router.delete('/:id', withAuth, (req, res) => {
       res.json(CommentData);
     })
     .catch((err) => {
+      //another part of the promise chain, if theres an error during the deletion process, it catches the error and handles it in the catch block.
       // If there's an error during the deletion process, log the error and send a 500 Internal Server Error response
       console.log(err);
       res.status(500).json(err);
