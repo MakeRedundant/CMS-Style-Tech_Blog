@@ -12,3 +12,5 @@ module.exports = {
     return word;
   },
 };
+
+//These helper functions can be used in your templates or other parts of your application to make it easier to display data in a user-friendly way.
