@@ -1,0 +1,21 @@
+An API (Application Programming Interface) is a set of rules and protocols that allows different software applications to communicate with each other.
+
+In the context of web development, an API often refers to a web API,
+ which is a collection of endpoints (URLs) and rules for making HTTP requests to access or manipulate data on a server. 
+
+
+In my code i put the API routes responsible for handling requests inside the API folder
+
+While the routes responsible for rendering web pages or views inside the controllers folder separate 
+
+API Routes (comment-routes.js, post-routes.js, user-routes.js) - Inside "controllers/api":
+
+These routes are typically responsible for handling HTTP requests related to your API endpoints.
+They deal with data manipulation, such as creating, reading, updating, and deleting records in your database.
+API routes often respond with JSON data or other machine-readable formats,
+Routes in this folder might include CRUD (Create, Read, Update, Delete) operations for comments, posts, and users,
+
+Web Routes (homeRoutes.js, dashboardRoutes.js) - Inside "controllers":
+
+These routes are responsible for rendering web pages or views that users interact with directly in their web browsers.
+They often involve rendering HTML templates and serving them to the client for display.
