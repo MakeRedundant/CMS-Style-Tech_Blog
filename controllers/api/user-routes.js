@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }, // Excludes the 'password' field from the returned data
   })
-    .then((dbUserData) => res.json(dbUserData)) // Send the user data as a JSON response
+    .then((UserData) => res.json(UserData)) // Send the user data as a JSON response
     .catch((err) => {
       console.log(err);
       res.status(500).json(err); // Send a 500 Internal Server Error response with the error information
@@ -40,12 +40,12 @@ router.get('/:id', (req, res) => {
       },
     ],
   })
-    .then((dbUserData) => {
-      if (!dbUserData) {
+    .then((UserData) => {
+      if (!UserData) {
         res.status(404).json({ message: 'No user found with this id' }); // If no user is found, send a 404 response
         return;
       }
-      res.json(dbUserData); // Send the retrieved user data as a JSON response
+      res.json(UserData); // Send the retrieved user data as a JSON response
     })
     .catch((err) => {
       console.log(err); // Log any errors for debugging
@@ -62,15 +62,15 @@ router.post('/', (req, res) => {
     password: req.body.password,
     twitter: req.body.twitter,
     github: req.body.github,
-  }).then((dbUserData) => {
+  }).then((UserData) => {
     req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.twitter = dbUserData.twitter;
-      req.session.github = dbUserData.github;
+      req.session.user_id = UserData.id;
+      req.session.username = UserData.username;
+      req.session.twitter = UserData.twitter;
+      req.session.github = UserData.github;
       req.session.loggedIn = true; // Set loggedIn status to true
 
-      res.json(dbUserData);
+      res.json(UserData);
     });
   });
 });
@@ -86,15 +86,15 @@ router.post('/login', (req, res) => {
     where: {
       email: req.body.email,
     },
-  }).then((dbUserData) => {
+  }).then((UserData) => {
     // If no user with that email address is found, respond with an error
-    if (!dbUserData) {
+    if (!UserData) {
       res.status(400).json({ message: 'No user with that email address!' });
       return;
     }
 
     // Check if the provided password matches the hashed password stored in the database
-    const validPassword = dbUserData.checkPassword(req.body.password);
+    const validPassword = UserData.checkPassword(req.body.password);
 
     // If the password is incorrect, respond with an error
     if (!validPassword) {
@@ -105,14 +105,14 @@ router.post('/login', (req, res) => {
     // If login is successful, save the user's session data (log them in)
     req.session.save(() => {
       // Declare session variables
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.twitter = dbUserData.twitter;
-      req.session.github = dbUserData.github;
+      req.session.user_id = UserData.id;
+      req.session.username = UserData.username;
+      req.session.twitter = UserData.twitter;
+      req.session.github = UserData.github;
       req.session.loggedIn = true; // Set loggedIn status to true
 
       // Respond with a JSON message and the user's data confirming successful login
-      res.json({ user: dbUserData, message: 'You are now logged in!' });
+      res.json({ user: UserData, message: 'You are now logged in!' });
     });
   });
 });
@@ -153,14 +153,14 @@ router.put('/:id', withAuth, (req, res) => {
       id: req.params.id, // Find the user to update by ID from the request parameters
     },
   })
-    .then((dbUserData) => {
-      if (!dbUserData[0]) {
+    .then((UserData) => {
+      if (!UserData[0]) {
         // If no user was found with the specified ID, send a 404 Not Found response
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       // Send a JSON response with the updated user data
-      res.json(dbUserData);
+      res.json(UserData);
     })
     .catch((err) => {
       // If there's an error during the update process, log the error and send a 500 Internal Server Error response
@@ -177,15 +177,15 @@ router.delete('/:id', withAuth, (req, res) => {
       id: req.params.id, // Find the user to delete by ID from the request parameters
     },
   })
-    .then((dbUserData) => {
+    .then((UserData) => {
       // Check if a user was found and deleted
-      if (!dbUserData) {
+      if (!UserData) {
         // If no user found, send a 404 Not Found response
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
       // If deletion was successful, send the deleted user data as a JSON response
-      res.json(dbUserData);
+      res.json(UserData);
     })
     .catch((err) => {
       // Handle errors (e.g., database error)
