@@ -19,6 +19,8 @@ async function loginFormHandler(event) {
       headers: { 'Content-Type': 'application/json' },
     });
 
+    console.log('Response:', response);
+
     // Check if the response from the server is successful (status code 200-299).
     if (response.ok) {
       // Redirect the user to the dashboard page upon successful login.

@@ -1,0 +1,15 @@
+heroku login
+
+heroku create add-custom-name-here only works in lowercase for some reason
+
+heroku config:set MY_VARIABLE=value
+so heroku config:set DB_NAME='blog_db' DB_USER='root' DB_PASSWORD=''
+
+heroku addons:create jawsdb
+
+
+
+git push heroku master
+
+heroku run npm run seed
+
