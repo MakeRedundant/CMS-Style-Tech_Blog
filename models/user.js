@@ -14,17 +14,26 @@ class User extends Model {
 
 User.init(
   {
-    //User attributes
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    // Defines a username column
+    username: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    twitter: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    github: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    // Defines an email column
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -33,11 +42,12 @@ User.init(
         isEmail: true,
       },
     },
+    // Defines a password column
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [9], //9 char minimum
+        len: [6], //minimum 6 characters
       },
     },
   },
