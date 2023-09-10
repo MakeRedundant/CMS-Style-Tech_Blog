@@ -60,13 +60,11 @@ router.post('/', (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    twitter: req.body.twitter,
     github: req.body.github,
   }).then((UserData) => {
     req.session.save(() => {
       req.session.user_id = UserData.id;
       req.session.username = UserData.username;
-      req.session.twitter = UserData.twitter;
       req.session.github = UserData.github;
       req.session.loggedIn = true; // Set loggedIn status to true
 
@@ -107,7 +105,6 @@ router.post('/login', (req, res) => {
       // Declare session variables
       req.session.user_id = UserData.id;
       req.session.username = UserData.username;
-      req.session.twitter = UserData.twitter;
       req.session.github = UserData.github;
       req.session.loggedIn = true; // Set loggedIn status to true
 

@@ -4,7 +4,6 @@ const userData = [
   {
     username: 'Brain_trang',
     name: 'Brian Trang',
-    twitter: 'braint',
     github: 'Makeredundant',
     email: 'brain_trang@gmail.com',
     password: '@password1',
@@ -12,7 +11,6 @@ const userData = [
   {
     username: 'Dan_javascript',
     name: 'Dan Javascript',
-    twitter: 'danj',
     github: 'danj',
     email: 'dan_javascript@gmail.com',
     password: '@password2',
@@ -20,7 +18,6 @@ const userData = [
   {
     username: 'Merge_conflict',
     name: 'Merge Conflict',
-    twitter: 'mergec',
     github: 'mergec',
     email: 'merge_conflict@gmail.com',
     password: '@password3',
@@ -28,7 +25,6 @@ const userData = [
   {
     username: 'Homer_simpson',
     name: 'Homer Simpson',
-    twitter: 'homer',
     github: 'homer',
     email: 'homer_simpson@gmail.com',
     password: '@password4',
@@ -36,7 +32,6 @@ const userData = [
   {
     username: 'Chat_gpt',
     name: 'Chat GPT',
-    twitter: 'chatgpt',
     github: 'chatgpt',
     email: 'chat_gpt@gmail.com',
     password: '@password5',
@@ -44,7 +39,6 @@ const userData = [
   {
     username: 'error_code',
     name: 'Error code',
-    twitter: 'error_c',
     github: 'errors',
     email: 'error@gmail.com',
     password: '@password6',

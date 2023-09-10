@@ -20,13 +20,13 @@ router.get('/', withAuth, (req, res) => {
         include: {
           // Include user information for comment authors
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username', 'github'],
         },
       },
       // Include user information for the post creator
       {
         model: User,
-        attributes: ['username', 'twitter', 'github'],
+        attributes: ['username', 'github'],
       },
     ],
   })
@@ -63,13 +63,13 @@ router.get('/edit/:id', withAuth, (req, res) => {
         include: {
           // Include user information for comment authors
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username', 'github'],
         },
       },
       {
         // Include user information for the post creator
         model: User,
-        attributes: ['username', 'twitter', 'github'],
+        attributes: ['username', 'github'],
       },
     ],
   })
@@ -117,13 +117,13 @@ router.get('/create/', withAuth, (req, res) => {
         include: {
           // Include user information for comment authors
           model: User,
-          attributes: ['username', 'twitter', 'github'],
+          attributes: ['username', 'github'],
         },
       },
       {
         // Include user information for the post creator
         model: User,
-        attributes: ['username', 'twitter', 'github'],
+        attributes: ['username', 'github'],
       },
     ],
   })

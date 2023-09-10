@@ -7,7 +7,6 @@ async function signupFormHandler(event) {
   const username = document.querySelector('#username-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
-  const twitter = document.querySelector('#twitter-signup').value.trim();
   const github = document.querySelector('#github-signup').value.trim();
 
   // Check if username, email, and password are provided.
@@ -18,7 +17,6 @@ async function signupFormHandler(event) {
       body: JSON.stringify({
         username,
         email,
-        twitter,
         github,
         password,
       }),
@@ -43,7 +41,7 @@ document
 
 //Summary
 //The code defines an asynchronous function signupFormHandler to handle user signup.
-//It extracts user signup data (username, email, password, twitter, and github) from the input fields.
+//It extracts user signup data (username, email, password and github) from the input fields.
 //It checks if username, email, and password are provided.
 //It sends a POST request to the server's '/api/users' endpoint with the user signup data as JSON.
 //If the server responds with a successful status code, 'success' is logged to the console, and the user is redirected to the '/dashboard' page, indicating a successful signup.
