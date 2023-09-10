@@ -44,6 +44,7 @@ app.use('/assets', express.static('assets'));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+app.use('/', routes); // Use the router for the root path ('/') or the path you want to use
 
 app.use(routes);
 
