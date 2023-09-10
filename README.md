@@ -34,48 +34,48 @@ This is a site, where developers can publish their blog posts and comment on oth
 <p><a href="https://heroku.com/">Heroku</a></p>
  
 ## 📓 Table of Contents
-- [Installation](#%EF%B8%8FInstallation)
+- [Installation](#Installation)
 - [Usage](#Usage)
-- [Screenshot](#%EF%B8%8FScreenshot)
+- [Screenshot](#Screenshot)
 - [Video](#Video)
-- [License](#%EF%B8%8FLicense)
+- [License](#License)
 - [Contributing](#Contributing)
-- [Tests](#%EF%B8%8FTests)
+- [Tests](#Tests)
 - [Questions](#Questions)
     
-## 🖥️ Installation
+## 🖥️Installation
 
 Users will need to add their ENV DB password to the .env.EXAMPLE
 
 Users will need to npm install if cloning from Github 
  ```npm install```
   
-## 💬 Usage 
+## 💬Usage 
 AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
-## 🖼️ Screenshot
+## 🖼️Screenshot
 Screenshot of Tech Blog
 ![Screenshot](./assets/Blog%20screen.jpg.png)
 
 Screenshot of Posts  GET request on Insomnia
 ![Screenshot](./assets/Screenshot%202023-09-10%20171555.png)
 
-## 📹 Video
+## 📹Video
 
-## ⚖️ License
+## ⚖️License
 
 This project is licensed under MIT
 
-## 🤝 Contributing
+## 🤝Contributing
 
 Brian Trang with thanks to USYD
 
-## 🛠️ Tests
+## 🛠️Tests
 
 N/A
 
-## ❔ Questions
+## ❔Questions
 
 If you have any questions about this project, please contact me directly at brian.trang9@gmail.com. Feel free to view more of my projects at https://github.com/Makeredundant.
