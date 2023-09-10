@@ -11,45 +11,44 @@ class Comment extends Model {}
 // Defines the comment
 Comment.init(
   {
-    // comment attributes
+    // The 'id' field represents the unique identifier for each comment
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
+    // The 'user_id' field represents the user who made the comment
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    // The 'post_id' field represents the post to which the comment is attached
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'post', // References the 'post' model
+        key: 'id', // References the 'id' field in the 'post' model
+      },
+    },
+    // The 'comment_text' field stores the actual comment text
     comment_text: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1], //1 char minimum
-      },
-    },
-    user_id: {
-      // an integer that references the id column of the user table (establishes a relationship between comments and users)
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user', // References the User model
-        key: 'id', // Using the id column of the User model
-      },
-    },
-    post_id: {
-      // referneces the id column of the post table. Establishes a relationship between comments and posts
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'post',
-        key: 'id',
+        len: [1], // Validates that the length is at least 1 character
       },
     },
   },
   {
-    // Sequelize instance for database connection
     sequelize,
-    // Prevent Sequelize from altering the table name
-    freezeTableName: true,
-    // Convert camelCase attribute names to snake_case column names
-    underscored: true,
-    // Set the model name for various operations
+    freezeTableName: true, // Prevents pluralization of the table name
+    underscored: true, // Uses snake_case for column names
     modelName: 'comment',
   }
 );
