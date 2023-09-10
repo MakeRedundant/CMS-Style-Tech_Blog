@@ -28,9 +28,9 @@
     </header>
 
     <main>
-        <div class="image container">
+        {{!-- <div class="image container">
             <img src="/assets/Old man.jpg" alt="Old man yells at cloud">
-        </div>
+        </div> --}}
         {{{ body }}}
     </main>
 
@@ -41,7 +41,8 @@
                 <a href="/dashboard/">Dashboard</a> |
                 <a href="/dashboard/create/">Create new post</a>
                 {{else}}
-                | <a href="/login.js/">Login</a>
+                | | <a href="/login">Login</a>
+
                 {{/if}}
             </p>
         </div>
@@ -60,5 +61,7 @@
 <script src='/public/javascript/logout.js'></script>
 {{/if}}
 </body>
+
+
 
 </html>

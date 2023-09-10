@@ -14,7 +14,7 @@ const hbs = exphbs.create({ helpers }); // Create an instance of Handlebars with
 const session = require('express-session');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3005;
 
 // Configure the session
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -24,7 +24,7 @@ const sess = {
   cookie: {
     maxAge: 300000,
     httpOnly: true,
-    secure: false,
+    secure: true,
     sameSite: 'strict',
   },
   resave: false,
