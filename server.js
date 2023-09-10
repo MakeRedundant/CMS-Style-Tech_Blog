@@ -18,14 +18,16 @@ const PORT = process.env.PORT || 3001;
 
 // Configure the session
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const sess = {
-  secret: 'Super secret secret', // Secret for session data
+  secret: 'Super secret secret',
   cookie: {
-    // Session will automatically expire in 10 minutes
-    expires: 10 * 60 * 1000,
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
   },
-  resave: true,
-  rolling: true,
+  resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
@@ -37,6 +39,8 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the /assets directory/for pictures and stuff
+app.use('/assets', express.static('assets'));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');

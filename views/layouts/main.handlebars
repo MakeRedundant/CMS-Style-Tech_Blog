@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technically Speaking</title>
+    <title>CMS Style Tech Blog- Will AI make your job redundant?</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
@@ -12,40 +12,44 @@
 
 <div class="wrapper">
     <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">technically speaking: a tech blog</h1>
+        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Is Technology too scary?</h1>
+        <p>Should mankind embrace the stone age?</p>
         <nav class="navbar mt-2">
             {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">create post</a>
-            <button id="logout" class="button is-danger">logout</button>
+            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Create post</a>
+            <button id="logout" class="button is-danger">Logout</button>
             {{else}}
-            <a href="/" class="navbar-item is-hoverable pt-1">homepage</a>
-            <a href="/login" class="button is-primary">login</a>
+            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+            <a href="/login" class="button is-primary">Login</a>
             {{/if}}
         </nav>
     </header>
 
     <main>
+        <div class="image container">
+            <img src="/assets/Old man.jpg" alt="Old man yells at cloud">
+        </div>
         {{{ body }}}
     </main>
 
     <footer class="footer rows pb-2">
         <div class="row-is-full content has-text-centered">
             <p>
-                <a href="/">homepage</a>{{#if loggedIn}} |
-                <a href="/dashboard/">dashboard</a> |
-                <a href="/dashboard/create/">create new post</a>
+                <a href="/">Homepage</a>{{#if loggedIn}} |
+                <a href="/dashboard/">Dashboard</a> |
+                <a href="/dashboard/create/">Create new post</a>
                 {{else}}
-                | <a href="/login/">login</a>
+                | <a href="/login.js/">Login</a>
                 {{/if}}
             </p>
         </div>
         <div class="row-is-full content has-text-centered">
             <p>
-                <strong>technically speaking</strong> by <a href="https://github.com/MakeRedundant">Brian Trang</a> | made
+                <strong>Tech Blog</strong> by <a href="https://github.com/MakeRedundant">Brian Trang</a> | made
                 with <a href="https://bulma.io/">bulma</a> | source code:
-                <a href="https://github.com/priyaravi23/mvc-tech-blog"><i class="fab fa-github"></i></a> |
+                <a href="https://github.com/MakeRedundant"><i class="fab fa-github"></i></a> |
                 <a href="mailto:brian.trang9@gmail.com"><i class="far fa-envelope"></i></a>
             </p>
         </div>
