@@ -16,7 +16,7 @@ const postData = [
   {
     title: 'Chat GPT Replaces all politicians, productivity goes up 999%',
     post_content:
-      'Ever since we replaced politicians and REAs, Australia has invented space travel',
+      'Ever since the country of Australia has replaced REAs and politicians with chat GPT the country has invented time travel, cured unahppiness and created a utopia',
     user_id: 2,
   },
   {
