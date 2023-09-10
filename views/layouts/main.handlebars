@@ -5,63 +5,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMS Style Tech Blog- Will AI make your job redundant?</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
-<div class="wrapper">
-    <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Is Technology too scary?</h1>
-        <p>Should mankind embrace the stone age?</p>
-        <nav class="navbar mt-2">
-            {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Create post</a>
-            <button id="logout" class="button is-danger">Logout</button>
-            {{else}}
-            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-            <a href="/login" class="button is-primary">Login</a>
-            {{/if}}
-        </nav>
-    </header>
-
-    <main>
-        <div class="image container">
-            <img src="/assets/Old man.jpg" alt="Old man yells at cloud">
-        </div>
-        {{{ body }}}
-    </main>
-
-    <footer class="footer rows pb-2">
-        <div class="row-is-full content has-text-centered">
-            <p>
-                <a href="/">Homepage</a>{{#if loggedIn}} |
-                <a href="/dashboard/">Dashboard</a> |
-                <a href="/dashboard/create/">Create new post</a>
+<body class="bg-white text-black">
+    <div class="container mx-auto">
+        <header class="py-4">
+            <h1 class="text-3xl font-bold">Is Technology too scary?</h1>
+            <h2>Should mankind embrace the stone age?</h2>
+            <nav class="mt-2">
+                {{#if loggedIn}}
+                <a href="/" class="text-black hover:text-gray-400">
+                    <i class="fas fa-home"></i> Homepage
+                </a>
+                <a href="/dashboard" class="ml-2 text-black hover:text-blue-400">Dashboard</a>
+                <a href="/dashboard/create/" class="ml-2 text-white hover:text-gray-400">Create post</a>
+                <button id="logout"
+                    class="ml-2 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded">Logout</button>
                 {{else}}
-                | | <a href="/login">Login</a>
-
+                <a href="/" class="text-black hover:text-gray-400">
+                    <i class="fas fa-home"></i> Homepage
+                </a>
+                <a href="/login"
+                    class="ml-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded">Login</a>
                 {{/if}}
-            </p>
-        </div>
-        <div class="row-is-full content has-text-centered">
-            <p>
-                <strong>Onion Tech Blog</strong> by <a href="https://github.com/MakeRedundant">Brian Trang</a> <br> <p>Thanks for looking! </p> <br> | source code:
-                <a href="https://github.com/MakeRedundant/CMS-Style-Tech_Blog"><i class="fab fa-github"></i></a> |
-                <a href="mailto:brian.trang9@gmail.com"><i class="far fa-envelope"></i></a>
-                <p>Feel free to contact me or check out my other stuff here!</p>
-            </p>
-        </div>
-    </footer>
-</div>
+            </nav>
+        </header>
 
-{{#if loggedIn}}
-<script src='/public/javascript/logout.js'></script>
-{{/if}}
+        <main class="flex items-center">
+            <div class="container mx-auto">
+                <div class="image">
+                    <img src="/assets/Old man.jpg" alt="Old man yells at cloud" class="mx-auto">
+                </div>
+                {{{ body }}}
+            </div>
+        </main>
+
+        <footer class="">
+            <div class="container mx-auto">
+                <div class="text-center">
+                    <p>
+                        <a href="/" class="text-black hover:text-gray-400">Homepage</a>{{#if loggedIn}} |
+                        <a href="/dashboard/" class="text-black hover:text-gray-400">Dashboard</a> |
+                        <a href="/dashboard/create/" class="text-black hover:text-gray-400">Create new post</a>
+                        {{else}}
+                        <span class="text-white">|</span>
+                        <a href="/login" class="ml-2 text-black hover:text-gray-400">Login</a>
+                        {{/if}}
+                    </p>
+                </div>
+                <div class="text-center mt-4">
+                    <p>
+                        <strong>Onion Tech Blog</strong> by <a href="https://github.com/MakeRedundant"
+                            class="text-blue-400 hover:text-blue-600">Brian Trang</a> <br>
+                    <p>Thanks for looking! </p> <br>
+                    My source code:
+                    <a href="https://github.com/MakeRedundant/CMS-Style-Tech_Blog"
+                        class="text-blue-400 hover:text-blue-600"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="mailto:brian.trang9@gmail.com" class="text-blue-400 hover:text-blue-600"><i
+                            class="far fa-envelope"></i>
+                        Email</a>
+                    <p>Feel free to contact me or check out my other stuff here!</p>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src='/public/javascript/logout.js'></script>
+    {{/if}}
 </body>
-
-
 
 </html>

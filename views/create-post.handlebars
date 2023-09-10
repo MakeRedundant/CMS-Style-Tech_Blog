@@ -1,19 +1,22 @@
 <section>
-    <a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>
-    <h2 class="title">create new blog post</h2>
-    <hr>
+    <a href="/dashboard" class="float-right">&larr; Back to dashboard</a>
+    <h2 class="text-2xl font-bold">Create New Blog Post</h2>
+    <hr class="my-4">
 
     <form class="new-post-form">
-        <div>
-            <label for="post-title">Title:</label>
-            <input class="input" type="text" id="post-title" name="post-title" placeholder="insert blog title here" />
+        <div class="mb-4">
+            <label for="post-title" class="block font-semibold">Title:</label>
+            <input class="w-full py-2 px-3 border rounded" type="text" id="post-title" name="post-title"
+                placeholder="Insert blog title here" />
         </div>
-        <div>
-            <label for="post-content">Content:</label>
-            <input class="textarea is-large" id="post-content" name="post-content"
-                placeholder="insert blog content here" />
+        <div class="mb-4">
+            <label for="post-content" class="block font-semibold">Content:</label>
+            <textarea class="w-full py-2 px-3 border rounded h-32" id="post-content" name="post-content"
+                placeholder="Insert blog content here"></textarea>
         </div>
-        <button type="submit" class="button is-primary is-pulled-right">Create post</button>
+        <button type="submit"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded float-right">Create
+            Post</button>
     </form>
 </section>
 

@@ -1,18 +1,20 @@
-<div class="column">
-    <h2 class="title pb-4">Login:</h2>
-    <hr>
+<div class="w-1/2 mx-auto mt-16">
+    <h2 class="text-3xl font-semibold pb-4">Login:</h2>
+    <hr class="mb-4">
     <form class="login-form">
-        <div>
-            <label for="email-login">Email:</label>
-            <input type="text" id="email-login" />
+        <div class="mb-4">
+            <label for="email-login" class="block font-medium">Email:</label>
+            <input type="text" id="email-login" class="w-full p-2 border rounded-lg" />
         </div>
-        <div>
-            <label for="password-login">Password:</label>
-            <input type="password" id="password-login" />
+        <div class="mb-4">
+            <label for="password-login" class="block font-medium">Password:</label>
+            <input type="password" id="password-login" class="w-full p-2 border rounded-lg" />
         </div>
-        <div>
-            <button type="submit" class="button is-primary">Login</button>
-            <a href="/signup"><button type="button" class="button is-danger">Signup</button></a>
+        <div class="flex justify-between items-center">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Login
+            </button>
+            <a href="/signup" class="text-green-500 hover:text-red-600 font-medium">Signup</a>
         </div>
     </form>
 </div>
