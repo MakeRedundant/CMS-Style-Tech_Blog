@@ -2,8 +2,8 @@
 
 const { Model, DataTypes } = require('sequelize');
 // Uses bcrypt for password hashing
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
 class User extends Model {
   checkPassword(loginPw) {
@@ -12,24 +12,30 @@ class User extends Model {
   } //the method takes a arugement loginPw and uses bcrypt.compareSync to compare the hashed version of the pw with the hashed pw in the users db
 }
 
+// define table columns and configuration
 User.init(
   {
+    // define an id column
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    // Defines a username column
+    // define a username column
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    twitter: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     github: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    // Defines an email column
+    // define an email column
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,34 +44,32 @@ User.init(
         isEmail: true,
       },
     },
-    // Defines a password column
+    // define a password column
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [4], //minimum 4 characters
+        len: [4],
       },
     },
   },
   {
     hooks: {
-      // The hooks section defines hooks, which are functions that run automatically before certain database operations. In this case, they are used to hash passwords before creating or updating user data.
-      beforeCreate: async (newUserData) => {
-        // beforeCreate hook: Hashes the password before a new user record is created.
+      // set up beforeCreate lifecycle "hook" functionality
+      async beforeCreate(newUserData) {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        //The await bcrypt.hash(password, saltRounds) function is used to hash the password with a specified number of salt rounds (10 in this case).
         return newUserData;
       },
-      beforeUpdate: async (updatedUserData) => {
-        // hook: Hashes the password before an existing user record is updated.
+      // set up beforeUpdate lifecycle "hook" functionality
+      async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(
-          //await bcrypt.hash(password, saltRounds) function is used to hash the password with a specified number of salt rounds (10 in this case).
           updatedUserData.password,
           10
         );
         return updatedUserData;
       },
     },
+
     sequelize,
     timestamps: false,
     freezeTableName: true,

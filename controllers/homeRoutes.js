@@ -4,7 +4,7 @@ const { Post, User, Comment } = require('../models');
 
 // Home route that displays all posts and associated comments
 router.get('/', (req, res) => {
-  console.log('Home route accessed'); // Add this line
+  console.log('Home route accessed');
   console.log(req.session);
 
   // Fetch all posts and their associated comments and authors

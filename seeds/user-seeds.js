@@ -6,7 +6,7 @@ const userData = [
     name: 'Brian Trang',
     github: 'Makeredundant',
     email: 'brain_trang@gmail.com',
-    password: '@password1',
+    password: '1234',
   },
   {
     username: 'Dan_javascript',
