@@ -43,7 +43,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [6], //minimum 6 characters
+        len: [4], //minimum 4 characters
       },
     },
   },
