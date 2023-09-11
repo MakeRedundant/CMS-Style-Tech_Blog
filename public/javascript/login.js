@@ -35,6 +35,8 @@ async function loginFormHandler(event) {
     }
   }
 }
+event.preventDefault();
+
 // Add a submit event listener to the login form to trigger the login process.
 document
   .querySelector('.login-form')
