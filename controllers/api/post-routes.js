@@ -98,6 +98,37 @@ router.post('/', withAuth, (req, res) => {
     });
 });
 
+// Update a post by ID
+router.put('/:id', withAuth, (req, res) => {
+  // Use the Post model to update a post with the specified ID
+  Post.update(
+    {
+      title: req.body.title, // Extract the updated title from the request body
+      post_content: req.body.post_content, // Extract the updated post content from the request body
+    },
+    {
+      where: {
+        id: req.params.id, // Find the post by its ID from the request parameters
+      },
+    }
+  )
+    .then((PostData) => {
+      // Check if a post with the specified ID was found and updated
+      if (!PostData[0]) {
+        // If no post was found, send a 404 Not Found response
+        res.status(404).json({ message: 'No post found with this id' });
+        return;
+      }
+      // If the post was successfully updated, send a JSON response with the updated data
+      res.json({ message: 'Post updated successfully' });
+    })
+    .catch((err) => {
+      // If there's an error during the update process, log the error and send a 500 Internal Server Error response
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // DELETE route for deleting a post by ID
 router.delete('/:id', withAuth, (req, res) => {
   // Use the Post model to delete a post with the specified ID

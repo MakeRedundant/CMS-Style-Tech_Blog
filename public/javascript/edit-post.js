@@ -9,7 +9,17 @@ async function editFormHandler(event) {
     .value;
 
   // Extract the post ID from the current URL.
-  const id = window.location.toString().split('/').slice(-1)[0];
+  // const id = window.location.toString().split('/').slice(-1)[0];
+
+  //Assign location to variable
+  const currentRoute = document.location;
+  //Assign URL to variable
+  const address = currentRoute.href;
+  //Split variable and assign to new Array
+  const addressArray = address.split('/');
+  //Get last position of Array
+  const id = addressArray[addressArray.length - 1];
+  console.log(id);
 
   // Send a PUT request to the server's '/api/posts/:id' endpoint to update the post.
   const response = await fetch(`/api/posts/${id}`, {
