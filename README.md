@@ -45,13 +45,15 @@ This is a site, where developers can publish their blog posts and comment on oth
     
 ## 🖥️Installation
 
+If cloning
 Users will need to add their ENV DB password to the .env.EXAMPLE
 
-Users will need to npm install if cloning from Github 
+Users will need to npm install
  ```npm install```
   
 ## 💬Usage 
 
+https://onion-tech-blog-bc59635a679a.herokuapp.com/
 
 AS A developer who writes about tech
 I WANT a CMS-style blog site
@@ -64,8 +66,13 @@ Screenshot of Tech Blog
 Screenshot of Posts  GET request on Insomnia
 ![Screenshot](./assets/Screenshot%202023-09-10%20171555.png)
 
-## 📹Video
+Gif of Signing in, Signing up, editing and deleting a post
+![Gif](./assets/Tech%20Blog.gif)
 
+
+## 📹Video
+Screencastify
+https://drive.google.com/file/d/1UzgiAGd4KQ-nUOKCDMP-Jq51vM0VHuAi/view
 ## ⚖️License
 
 This project is licensed under MIT
