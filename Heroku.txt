@@ -7,10 +7,9 @@ so heroku config:set DB_NAME='blog_db' DB_USER='root' DB_PASSWORD=''
 
 heroku addons:create jawsdb
 
-heroku run npm run seed
 
 
-git push heroku master
+git push heroku master/with without master??
 
-heroku run npm run seed //just check again
+heroku run npm run seed 
 

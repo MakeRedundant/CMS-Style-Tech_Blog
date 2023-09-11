@@ -5,7 +5,7 @@ async function newFormHandler(event) {
 
   // Get the values of the title and post_content inputs from the form.
   const title = document.querySelector('input[name="post-title"]').value;
-  const post_content = document.querySelector('input[name="post-content"]')
+  const post_content = document.querySelector('textarea[name="post-content"]')
     .value;
 
   // Send a POST request to the server's '/api/posts' endpoint with the post data.
