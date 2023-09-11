@@ -24,7 +24,7 @@ const sess = {
   cookie: {
     maxAge: 300000,
     httpOnly: true,
-    secure: true,
+    secure: false, //secure false beacause http and not https turns to true when not http ()
     sameSite: 'strict',
   },
   resave: false,

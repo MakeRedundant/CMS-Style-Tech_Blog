@@ -5,6 +5,9 @@ const withAuth = require('../utils/auth');
 
 // Dashboard route for displaying the user's posts
 router.get('/', withAuth, (req, res) => {
+  if (!req.session.user_id) {
+    console.log('no user id', session);
+  }
   // Find all posts created by the user who is currently logged in
   Post.findAll({
     where: {

@@ -15,7 +15,7 @@ async function loginFormHandler(event) {
   if (email && password) {
     // Send a POST request to the server's '/api/users/login' endpoint.
     const response = await fetch('/api/users/login', {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify({
         email,
         password,
@@ -35,7 +35,6 @@ async function loginFormHandler(event) {
     }
   }
 }
-event.preventDefault();
 
 // Add a submit event listener to the login form to trigger the login process.
 document

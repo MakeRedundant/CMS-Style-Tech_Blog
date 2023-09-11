@@ -17,7 +17,7 @@
             <h2>Should mankind embrace the stone age?</h2>
             <nav class="mt-2">
                 {{#if loggedIn}}
-                <a href="/" class="text-black hover:text-gray-400">
+                <a href="/" class="text-black hover:text-blue-400">
                     <i class="fas fa-home"></i> Homepage
                 </a>
                 <a href="/dashboard" class="ml-2 text-black hover:text-blue-400">Dashboard</a>
@@ -25,7 +25,7 @@
                 <button id="logout"
                     class="ml-2 bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded">Logout</button>
                 {{else}}
-                <a href="/" class="text-black hover:text-gray-400">
+                <a href="/" class="text-black hover:text-blue-400">
                     <i class="fas fa-home"></i> Homepage
                 </a>
                 <a href="/login"
@@ -47,9 +47,9 @@
             <div class="container mx-auto">
                 <div class="text-center">
                     <p>
-                        <a href="/" class="text-black hover:text-gray-400">Homepage</a>{{#if loggedIn}} |
-                        <a href="/dashboard/" class="text-black hover:text-gray-400">Dashboard</a> |
-                        <a href="/dashboard/create/" class="text-black hover:text-gray-400">Create new post</a>
+                        <a href="/" class="text-black hover:text-blue-400">Homepage</a>{{#if loggedIn}} |
+                        <a href="/dashboard/" class="text-black hover:text-blue-400">Dashboard</a> |
+                        <a href="/dashboard/create/" class="text-black hover:text-blue-400">Create new post</a>
                         {{else}}
                         <span class="text-white">|</span>
                         <a href="/login" class="ml-2 text-black hover:text-gray-400">Login</a>
@@ -75,7 +75,7 @@
     </div>
 
     {{#if loggedIn}}
-    <script src='/public/javascript/logout.js'></script>
+    <script src='/javascript/logout.js'></script>
     {{/if}}
 </body>
 
