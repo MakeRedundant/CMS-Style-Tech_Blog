@@ -35,7 +35,7 @@ async function editFormHandler(event) {
 // Add a submit event listener to the edit post form to trigger the edit process.
 document
   .querySelector('.edit-post-form')
-  .addEventListener('click', editFormHandler);
+  .addEventListener('submit', editFormHandler);
 //Summary
 //The code defines an asynchronous function editFormHandler to handle the editing of a post.
 //It prevents the default behavior of the form submission using event.preventDefault().
