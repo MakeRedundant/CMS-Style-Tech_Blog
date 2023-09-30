@@ -46,10 +46,13 @@ This is a site, where developers can publish their blog posts and comment on oth
 ## 🖥️Installation
 
 If cloning
-Users will need to add their ENV DB password to the .env.EXAMPLE
+Users will need to add their ENV DB password to the .env.EXAMPLE 
 
-Users will need to npm install
- ```npm install```
+Users will need to ```npm install``` to install dependencies
+
+ ```pip
+ npm install
+ ```
   
 ## 💬Usage 
 
